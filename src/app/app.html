@@ -1,0 +1,447 @@
+<!-- Professional Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#home">Venus Septic Tank Cleaners</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Professional Hero Section -->
+<section id="home" class="section-padding" style="margin-top: 76px; min-height: 80vh;">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-12 col-md-6 hero-content">
+        <h1 class="display-4 fade-in-up">Professional Septic Tank Cleaning</h1>
+        <p class="lead fade-in-up">Reliable septic tank cleaning, drainage unclogging, and waste removal services in Srikakulam and nearby areas since 2021.</p>
+        <div class="d-flex gap-4 flex-wrap fade-in-up">
+          <a href="tel:+919989190456" class="btn btn-success btn-lg">
+            <i class="fas fa-phone"></i> Call: 99891 90456
+          </a>
+          <a href="#services" class="btn btn-outline-primary btn-lg">
+            <i class="fas fa-tools"></i> Our Services
+          </a>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+          <div class="carousel-indicators">
+            @for (photo of workPhotos; track $index) {
+              <button type="button" data-bs-target="#heroCarousel" [attr.data-bs-slide-to]="$index" [class]="$index === 0 ? 'active' : ''"></button>
+            }
+          </div>
+          <div class="carousel-inner">
+            @for (photo of workPhotos; track $index) {
+              <div [class]="'carousel-item' + ($index === 0 ? ' active' : '')">
+                <img [src]="photo.url" class="d-block w-100 rounded shadow" [alt]="photo.title" style="height: 400px; object-fit: cover;">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+                  <h6 class="mb-0">{{ photo.title }}</h6>
+                </div>
+              </div>
+            }
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Professional Services Section -->
+<section id="services" class="section-padding">
+  <div class="container">
+    <h2 class="text-center section-title">Our Services</h2>
+    <div class="row g-3">
+      <div class="col-6 col-md-3">
+        <div class="flip-card" (click)="toggleCard(0)">
+          <div class="flip-card-inner" [class.flipped]="flippedCards[0]">
+            <div class="flip-card-front">
+              <div class="card h-100 border-0">
+                <div class="card-body text-center d-flex flex-column align-items-center justify-content-center">
+                  <div class="service-icon">
+                    <i class="fas fa-home"></i>
+                  </div>
+                  <h5 class="card-title mb-0">Septic Tank Cleaning at Customer Location</h5>
+                </div>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <div class="card h-100 border-0">
+                <div class="card-body text-center d-flex align-items-center justify-content-center">
+                  <ul class="list-unstyled mb-0">
+                    <li><i class="fas fa-check me-2"></i>On-site cleaning service</li>
+                    <li><i class="fas fa-check me-2"></i>No mess guarantee</li>
+                    <li><i class="fas fa-check me-2"></i>Fast professional work</li>
+                    <li><i class="fas fa-check me-2"></i>Complete waste removal</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="flip-card" (click)="toggleCard(1)">
+          <div class="flip-card-inner" [class.flipped]="flippedCards[1]">
+            <div class="flip-card-front">
+              <div class="card h-100 border-0">
+                <div class="card-body text-center d-flex flex-column align-items-center justify-content-center">
+                  <div class="service-icon">
+                    <i class="fas fa-tint"></i>
+                  </div>
+                  <h5 class="card-title mb-0">Septic Tank Sludge Removal</h5>
+                </div>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <div class="card h-100 border-0">
+                <div class="card-body text-center d-flex align-items-center justify-content-center">
+                  <ul class="list-unstyled mb-0">
+                    <li><i class="fas fa-check me-2"></i>Complete sludge removal</li>
+                    <li><i class="fas fa-check me-2"></i>Wastewater extraction</li>
+                    <li><i class="fas fa-check me-2"></i>Solid waste clearing</li>
+                    <li><i class="fas fa-check me-2"></i>Powerful suction equipment</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="flip-card" (click)="toggleCard(2)">
+          <div class="flip-card-inner" [class.flipped]="flippedCards[2]">
+            <div class="flip-card-front">
+              <div class="card h-100 border-0">
+                <div class="card-body text-center d-flex flex-column align-items-center justify-content-center">
+                  <div class="service-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                  </div>
+                  <h5 class="card-title mb-0">Overflow Emergency Support</h5>
+                </div>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <div class="card h-100 border-0">
+                <div class="card-body text-center d-flex align-items-center justify-content-center">
+                  <ul class="list-unstyled mb-0">
+                    <li><i class="fas fa-check me-2"></i>Quick emergency response</li>
+                    <li><i class="fas fa-check me-2"></i>Stop leakage/overflow</li>
+                    <li><i class="fas fa-check me-2"></i>Same day tank clearing</li>
+                    <li><i class="fas fa-check me-2"></i>24/7 availability</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="flip-card" (click)="toggleCard(3)">
+          <div class="flip-card-inner" [class.flipped]="flippedCards[3]">
+            <div class="flip-card-front">
+              <div class="card h-100 border-0">
+                <div class="card-body text-center d-flex flex-column align-items-center justify-content-center">
+                  <div class="service-icon">
+                    <i class="fas fa-building"></i>
+                  </div>
+                  <h5 class="card-title mb-0">Apartment / Commercial Septic Cleaning</h5>
+                </div>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <div class="card h-100 border-0">
+                <div class="card-body text-center d-flex align-items-center justify-content-center">
+                  <ul class="list-unstyled mb-0">
+                    <li><i class="fas fa-check me-2"></i>Apartment complexes</li>
+                    <li><i class="fas fa-check me-2"></i>Hotels & restaurants</li>
+                    <li><i class="fas fa-check me-2"></i>Hospitals & clinics</li>
+                    <li><i class="fas fa-check me-2"></i>Small industries</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Professional Location Search -->
+<section class="py-5 bg-primary">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-md-8">
+        <div class="text-center mb-4">
+          <h4 class="text-white mb-2">Check Service in Your Area</h4>
+          <p class="text-white-50 mb-0">Enter your location to see if we provide service in your area</p>
+        </div>
+        <div class="input-group location-search">
+          <input type="text" class="form-control" [(ngModel)]="searchLocation" placeholder="Enter your location (e.g., Srikakulam, Palasa, etc.)" (input)="checkLocation()">
+          <button class="btn btn-success" type="button" (click)="checkLocation()">
+            <i class="fas fa-search"></i> Check Service
+          </button>
+        </div>
+        @if (locationResult) {
+          <div class="mt-2 p-3 rounded location-result-box" [class]="locationAvailable ? 'bg-success text-white' : 'bg-warning text-dark'">
+            <div class="d-flex align-items-start">
+              <i [class]="locationAvailable ? 'fas fa-check-circle me-2 mt-1' : 'fas fa-exclamation-triangle me-2 mt-1'"></i>
+              <div class="flex-grow-1">
+                <div [innerHTML]="locationResult"></div>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Professional Service Areas -->
+<section id="service-areas" class="py-5">
+  <div class="container">
+    <h2 class="text-center section-title">Service Areas</h2>
+    
+    <!-- Professional Horizontal Scrolling Service Areas -->
+    <div class="locations-container">
+      <div class="overflow-hidden">
+        <div class="d-flex locations-scroll">
+          @for (location of getDuplicatedLocations(); track $index) {
+            <div class="flex-shrink-0">
+              <div class="location-card">
+                <div class="card-body text-center">
+                  <div class="location-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <p class="card-text mb-0">{{ location }}</p>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+    
+
+  </div>
+</section>
+
+<!-- Professional Reviews Section -->
+<section id="reviews" class="py-5">
+  <div class="container">
+    <h2 class="text-center section-title">Customer Reviews</h2>
+    
+    <!-- Professional Horizontal Scrolling Reviews -->
+    <div class="reviews-container">
+      <div class="overflow-hidden">
+        <div class="d-flex reviews-scroll">
+          @for (review of getDuplicatedReviews(); track $index) {
+            <div class="flex-shrink-0">
+              <div class="review-card">
+                <div class="card-body">
+                  <div class="review-header">
+                    <h5 class="review-author">{{ review?.name }}</h5>
+                    <div class="review-rating">
+                      @for (star of getStars(review?.rating || 0); track $index) {
+                        <i class="fas fa-star"></i>
+                      }
+                    </div>
+                  </div>
+                  <p class="review-content">"{{ review?.comment }}"</p>
+                  <div class="review-meta">
+                    <span>{{ review?.location }}</span>
+                    <span>{{ formatDate(review?.date || '') }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+    
+
+  </div>
+</section>
+
+<!-- Professional Contact Section -->
+<section id="contact" class="section-padding">
+  <div class="container">
+    <h2 class="text-center section-title">Get In Touch</h2>
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <div class="card contact-card h-100">
+          <div class="card-body">
+            <div class="contact-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <h4 class="contact-title">Share Your Experience</h4>
+            <p class="text-muted mb-4">Help others by sharing your experience with our professional services</p>
+            <button class="btn btn-primary" (click)="openReviewModal()">
+              <i class="fas fa-edit"></i> Add a Review
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="card contact-card h-100">
+          <div class="card-body">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <h4 class="contact-title">Call Us Now</h4>
+            <div class="contact-info">99891 90456</div>
+            <a href="tel:+919989190456" class="btn btn-success">
+              <i class="fas fa-phone"></i> Call Now
+            </a>
+            <p class="text-muted mt-3 mb-0">Serving Srikakulam & nearby areas since 2021</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="card contact-card h-100">
+          <div class="card-body">
+            <div class="contact-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <h4 class="contact-title">Operating Hours</h4>
+            <div class="text-center">
+              <p class="mb-2"><strong>24/7 Emergency Service</strong></p>
+              <p class="text-muted mb-0">Regular Hours: 9:00 AM - 5:00 PM<br>All Days</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Review Modal -->
+@if (showReviewModal) {
+  <div class="modal d-block" style="background: rgba(0,0,0,0.5);">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title">📝 Leave a Review</h5>
+          <button type="button" class="btn-close btn-close-white" (click)="closeReviewModal()"></button>
+        </div>
+        <div class="modal-body">
+          <form (ngSubmit)="addReview()" #reviewForm="ngForm">
+            <div class="mb-3">
+              <input type="text" class="form-control" [(ngModel)]="newReview.name" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="mb-3">
+              <input type="text" class="form-control" [(ngModel)]="newReview.location" name="location" placeholder="Your Location" required>
+            </div>
+            <div class="mb-3">
+              <select class="form-select" [(ngModel)]="newReview.rating" name="rating" required>
+                <option value="">Select Rating</option>
+                <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+                <option value="4">⭐⭐⭐⭐ Very Good</option>
+                <option value="3">⭐⭐⭐ Good</option>
+                <option value="2">⭐⭐ Fair</option>
+                <option value="1">⭐ Poor</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control" [(ngModel)]="newReview.comment" name="comment" placeholder="Tell us about your experience..." rows="4" required></textarea>
+            </div>
+            <div class="d-flex gap-2">
+              <button type="button" class="btn btn-secondary" (click)="closeReviewModal()">Cancel</button>
+              <button type="submit" class="btn btn-primary flex-fill" [disabled]="!reviewForm.form.valid">Submit Review</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+}
+
+<!-- Toast Notification -->
+@if (showToast) {
+  <div class="position-fixed top-0 end-0 p-3" style="z-index: 1050;">
+    <div class="toast show" role="alert">
+      <div class="toast-body bg-success text-white rounded">
+        {{ toastMessage }}
+      </div>
+    </div>
+  </div>
+}
+
+<!-- Professional Footer -->
+<footer class="text-white py-5">
+  <div class="container">
+    <div class="footer-content">
+      <div class="row g-5">
+        <div class="col-lg-4 col-md-6">
+          <h5>Venus Septic Tank Cleaners</h5>
+          <p class="mb-4">Professional septic tank cleaning and waste management services in Andhra Pradesh. Your trusted partner for clean and safe environment since 2021.</p>
+          <div class="d-flex gap-3">
+            <a href="tel:+919989190456" class="btn btn-success">
+              <i class="fas fa-phone"></i> Call Now
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h6>Quick Links</h6>
+          <div class="d-flex flex-column">
+            <a href="#services" class="mb-2">
+              <i class="fas fa-cog me-2"></i>Services
+            </a>
+            <a href="#reviews" class="mb-2">
+              <i class="fas fa-star me-2"></i>Reviews
+            </a>
+            <a href="#contact" class="mb-2">
+              <i class="fas fa-envelope me-2"></i>Contact
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h6>Service Areas</h6>
+          <p class="mb-2"><i class="fas fa-map-marker-alt me-2"></i>Srikakulam</p>
+          <p class="mb-2"><i class="fas fa-map-marker-alt me-2"></i>Palasa</p>
+          <p class="mb-2"><i class="fas fa-map-marker-alt me-2"></i>Tekkali</p>
+          <p class="mb-0"><i class="fas fa-map-marker-alt me-2"></i>Sompeta</p>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h6>Contact Info</h6>
+          <p class="mb-2">
+            <i class="fas fa-phone me-2"></i>
+            <a href="tel:+919989190456">99891 90456</a>
+          </p>
+          <p class="mb-2">
+            <i class="fas fa-clock me-2"></i>
+            24/7 Emergency Service
+          </p>
+          <p class="mb-0">
+            <i class="fas fa-map-marker-alt me-2"></i>
+            Serving Andhra Pradesh
+          </p>
+        </div>
+      </div>
+      <hr class="my-4" style="border-color: rgba(255, 255, 255, 0.2);">
+      <div class="text-center">
+        <p class="mb-0">&copy; 2024 Venus Septic Tank Cleaners. All rights reserved. | Professional Waste Management Solutions</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<router-outlet />
